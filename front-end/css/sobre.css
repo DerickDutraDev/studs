@@ -1,0 +1,207 @@
+/* Definição de cores e fontes usando variáveis */
+:root {
+    --primary-color: #2a21b3;         /* Azul vibrante */
+    --secondary-color: #7b68ee;        /* Roxo/lavanda sutil */
+    --bg-color: #0d0a3d;              /* Fundo escuro */
+    --text-color: #ffffff;            /* Texto branco */
+    --form-bg-color: #1a1555;         /* Cor de fundo para o formulário/box */
+    --input-bg-color: #2e268a;        /* Cor de fundo para os inputs */
+    --font-family: 'Montserrat', sans-serif;
+}
+
+/* --- Reset básico e estilos do corpo --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Estilos do cabeçalho --- */
+.main-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 15px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    top: 0px;
+    position: sticky;
+    z-index: 1000;  
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #c9c9ff;
+}
+
+.cta-button {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    background-color: #9370db;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Estilos da seção principal (Sobre) --- */
+main {
+    display: flex;
+    min-height: calc(100vh - 80px);
+    flex-wrap: wrap;
+}
+
+.direita {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.box {
+    background-color: var(--form-bg-color);
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 1000px;
+}
+
+.content-container {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.content-container h2 {
+    font-size: 1.8rem;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.content-container h3 {
+    font-size: 1.4rem;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.content-container p {
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.content-container ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.content-container li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.content-container li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+}
+
+.cta-text {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.botaoFinal {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .esquerda {
+        min-height: 300px;
+    }
+
+    .box {
+        padding: 30px;
+    }
+
+    .content-container h1 {
+        font-size: 2rem;
+    }
+    
+    .content-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .content-container h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .box {
+        padding: 20px;
+    }
+}

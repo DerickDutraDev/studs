@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STUDS Dashboard</title>
+  <link rel="stylesheet" href="./css/homePage.css">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <!-- Botão de menu (...) -->
+    <button id="menu-btn" class="menu-btn">⋯</button>
+    <h1>STUDS</h1>
+    <a href="/index.html"><img src="./img/oie_transparent (18).png" alt=""  class="imagem-sair"></a>
+  </header>
+
+  <!-- Menu lateral -->
+  <aside id="sidebar" class="sidebar">
+    <nav>
+      <ul>
+        <li>
+          <a href="#">
+            <i data-lucide="calendar-check"></i>
+            Desafios Diários
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i data-lucide="paperclip"></i>
+            Anexar Material
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i data-lucide="check-square"></i>
+            Corrigir Tarefas
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Overlay -->
+  <div id="overlay" class="overlay"></div>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <section class="instructions">
+      <p>Aqui vou colocar as opções de anexar atividades para a IA corrigir e tasks diárias de acordo com o que o aluno está estudando.</p>
+      <p>Vamos treinar uma IA para mandar mensagens de incentivo, de acordo com o nível de aprendizagem.</p>
+      <p>Vamos treinar uma IA para mandar mensagens de apoio para estudar e possíveis broncas por não estudar.</p>
+      <p>Aqui colocar recomendações de vídeos para aprendizagem em determinada dificuldade específica.</p>
+    </section>
+
+    <!-- Cards -->
+    <section class="cards">
+      <div class="card">
+        <h3>APRENDIZAGEM</h3>
+        <div class="chart-placeholder">[ Gráfico de Aprendizagem ]</div>
+      </div>
+
+      <div class="card">
+        <h3>DIAS ESTUDADOS</h3>
+        <div class="chart-placeholder">[ Gráfico de Dias Estudados ]</div>
+      </div>
+
+      <div class="card">
+        <h3>PRINCIPAIS DIFICULDADES</h3>
+        <div class="chart-placeholder">[ Gráfico de Principais Dificuldades ]</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2025 STUDS - Dashboard MVP</p>
+  </footer>
+
+  <!-- Script -->
+  <script src="./js/script.js"></script>
+  <script>
+    lucide.createIcons(); // ativa os ícones
+  </script>
+</body>
+</html>
