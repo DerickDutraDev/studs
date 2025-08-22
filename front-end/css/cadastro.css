@@ -91,16 +91,20 @@ main {
 
 .esquerda {
     flex: 1;
-    min-height: 600px;
+    display: flex;
+    width: 10px;
     overflow: hidden;
     position: relative;
 }
 
 .esquerda img {
-    width: 100%;
-    height: 100%;
+    margin-left: 10%;
+    margin-top: 35px;
+    width: 85%;
+    height: 90%;
     object-fit: cover;
     display: block;
+    border-radius: 40px;
 }
 
 .direita {
@@ -214,6 +218,10 @@ main {
 
     .form-container h1 {
         font-size: 2rem;
+    }
+
+    .esquerda{
+        display: none;
     }
 }
 
