@@ -1,11 +1,17 @@
 /* Definição de cores e fontes usando variáveis */
 :root {
-    --primary-color: #2a21b3;         /* Azul vibrante */
-    --secondary-color: #7b68ee;        /* Roxo/lavanda sutil */
-    --bg-color: #0d0a3d;              /* Fundo escuro */
-    --text-color: #ffffff;            /* Texto branco */
-    --form-bg-color: #1a1555;         /* Cor de fundo para o formulário/box */
-    --input-bg-color: #2e268a;        /* Cor de fundo para os inputs */
+    --primary-color: #2a21b3;
+    /* Azul vibrante */
+    --secondary-color: #7b68ee;
+    /* Roxo/lavanda sutil */
+    --bg-color: #0d0a3d;
+    /* Fundo escuro */
+    --text-color: #ffffff;
+    /* Texto branco */
+    --form-bg-color: #1a1555;
+    /* Cor de fundo para o formulário/box */
+    --input-bg-color: #2e268a;
+    /* Cor de fundo para os inputs */
     --font-family: 'Montserrat', sans-serif;
 }
 
@@ -30,7 +36,7 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     top: 0px;
     position: sticky;
-    z-index: 1000;  
+    z-index: 1000;
 }
 
 .header-container {
@@ -173,10 +179,32 @@ main {
     margin-top: 20px;
 }
 
+.botaoFinal a {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 /* --- Responsividade --- */
 @media (max-width: 768px) {
     main {
         flex-direction: column;
+    }
+
+    .header-container {
+        justify-content: space-between;
+    }
+   
+    .header-container a{
+        font-size: 18px;
+    }
+
+    .nav-menu a{
+        font-size: 14px;
+    }
+
+    .header-container .cta-button{
+        font-size: 17px;
+        padding: 6px 13px;
     }
 
     .esquerda {
@@ -190,7 +218,7 @@ main {
     .content-container h1 {
         font-size: 2rem;
     }
-    
+
     .content-container h2 {
         font-size: 1.5rem;
     }
