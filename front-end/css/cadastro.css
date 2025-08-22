@@ -1,0 +1,224 @@
+/* Definição de cores e fontes usando variáveis */
+:root {
+    --primary-color: #2a21b3;
+    --secondary-color: #7b68ee;
+    --bg-color: #0d0a3d;
+    --text-color: #ffffff;
+    --form-bg-color: #1a1555;
+    --input-bg-color: #2e268a;
+    --font-family: 'Montserrat', sans-serif;
+}
+
+/* --- Reset básico e estilos do corpo --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Estilos do cabeçalho --- */
+.main-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 15px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #c9c9ff;
+}
+
+.cta-button {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    background-color: #9370db;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Estilos da seção principal (Cadastro) --- */
+main {
+    display: flex;
+    min-height: calc(100vh - 80px);
+    flex-wrap: wrap;
+}
+
+.esquerda {
+    flex: 1;
+    min-height: 600px;
+    overflow: hidden;
+    position: relative;
+}
+
+.esquerda img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.direita {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.box {
+    background-color: var(--form-bg-color);
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.form-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.form-container p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #ccc;
+    text-align: center;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--input-bg-color);
+    border: none;
+    border-radius: 8px;
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    background-color: #3b3394;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 700;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-button:hover {
+    background-color: #9370db;
+    transform: translateY(-2px);
+}
+
+.login-link {
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+.login-link a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease-in-out;
+}
+
+.login-link a:hover {
+    color: #fff;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .esquerda {
+        min-height: 300px;
+    }
+
+    .box {
+        padding: 30px;
+        box-shadow: none;
+    }
+
+    .form-container h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .box {
+        padding: 20px;
+    }
+}
