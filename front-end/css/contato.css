@@ -39,6 +39,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .logo {
@@ -111,9 +112,9 @@ section {
 }
 
 .perfil-img-container {
-    width: 155px;
+    width: 154px;
     height: 150px;
-    border-radius: 10%;
+    border-radius: 60%;
     /* Torna o contêiner redondo */
     /* overflow: hidden; /* Esconde o excesso da imagem */
     margin: 0 auto 20px;
@@ -121,25 +122,18 @@ section {
     /* Borda decorativa */
     box-shadow: 0 0 15px rgba(123, 104, 238, 0.5);
     /* Sombra suave */
+    position: relative;
 }
 
 .perfil-img-container img {
     width: 149px;
-    height: 20%;
+    height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 10%;
+    border-radius: 60%;
     position: absolute;
-    top: 227px;
+    top: 0%;
 
-}
-
-.derek{
-    left: 1079.5px;
-}
-
-.lucas{
-    left: 322px;
 }
 
 .perfil-box h1 {
@@ -158,22 +152,45 @@ section {
     font-size: 1rem;
     margin-bottom: 8px;
     color: #ccc;
-} 
+}
 
-.perfil-topicos li a{
+.perfil-topicos li a {
     color: var(--text-color);
     text-decoration: none;
-    transition: color 0.3s ease-in-out;;
+    transition: color 0.3s ease-in-out;
+    ;
 }
-.perfil-topicos li a:hover{
+
+.perfil-topicos li a:hover {
     color: var(--secondary-color);
     text-decoration: none;
-    transition: color 0.3s ease-in-out;;
+    transition: color 0.3s ease-in-out;
+    ;
 }
 
 
 /* Responsividade */
+/* --- Responsividade Otimizada --- */
 @media (max-width: 768px) {
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .nav-menu {
+        gap: 10px;
+        height: 20px;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
+    }
+
+    .cta-button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
     main {
         flex-direction: column;
     }
@@ -184,5 +201,21 @@ section {
 
     .perfil-box {
         padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .header-container {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .nav-menu {
+        margin-top: 5px;
+    }
+
+    .perfil-box {
+        padding: 20px;
     }
 }
