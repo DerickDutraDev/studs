@@ -204,9 +204,11 @@ footer {
     padding: 0.7rem 1rem;
     border-radius: 8px;
     transition: background 0.3s;
+    
 }
 
 .sidebar nav ul li a i {
     width: 20px;
     height: 20px;
+    
 }
