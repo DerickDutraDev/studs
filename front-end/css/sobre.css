@@ -1,21 +1,15 @@
 /* Definição de cores e fontes usando variáveis */
 :root {
-    --primary-color: #2a21b3;
-    /* Azul vibrante */
-    --secondary-color: #7b68ee;
-    /* Roxo/lavanda sutil */
-    --bg-color: #0d0a3d;
-    /* Fundo escuro */
-    --text-color: #ffffff;
-    /* Texto branco */
-    --form-bg-color: #1a1555;
-    /* Cor de fundo para o formulário/box */
-    --input-bg-color: #2e268a;
-    /* Cor de fundo para os inputs */
+    --primary-color: #4B0082; /* Roxo-escuro */
+    --secondary-color: #8A2BE2; /* Roxo-azulado */
+    --bg-color: #0d0a3d; /* Roxo-muito-escuro */
+    --text-color: #e0e0e0; /* Cinza-claro */
+    --form-bg-color: #1a1555; /* Roxo-azulado-escuro */
+    --input-bg-color: #2e268a; /* Roxo-azulado-claro */
     --font-family: 'Montserrat', sans-serif;
 }
 
-/* --- Reset básico e estilos do corpo --- */
+/* Reset básico e estilos do corpo */
 * {
     margin: 0;
     padding: 0;
@@ -27,15 +21,16 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* --- Estilos do cabeçalho --- */
+/* Estilos do cabeçalho */
 .main-header {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     padding: 15px 0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    top: 0px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     position: sticky;
+    top: 0;
     z-index: 1000;
 }
 
@@ -49,10 +44,15 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     text-decoration: none;
     color: var(--text-color);
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
 }
 
 .nav-menu {
@@ -64,52 +64,50 @@ body {
     font-size: 1rem;
     text-decoration: none;
     color: var(--text-color);
-    transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 .nav-link:hover {
     color: #c9c9ff;
+    border-bottom: 2px solid #c9c9ff;
+    padding-bottom: 2px;
 }
 
 .cta-button {
     background-color: var(--secondary-color);
     color: var(--text-color);
-    padding: 10px 20px;
+    padding: 12px 24px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .cta-button:hover {
     background-color: #9370db;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 /* --- Estilos da seção principal (Sobre) --- */
 main {
     display: flex;
-    min-height: calc(100vh - 80px);
-    flex-wrap: wrap;
-}
-
-.direita {
-    flex: 1;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
+    align-items: flex-start;
+    padding: 60px 20px;
+    min-height: 100vh;
 }
 
 .box {
     background-color: var(--form-bg-color);
-    padding: 60px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 60px 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
     width: 100%;
     max-width: 1000px;
+    background: linear-gradient(145deg, rgba(26, 21, 85, 0.9), rgba(13, 10, 61, 0.8));
+    backdrop-filter: blur(10px);
 }
 
 .content-container {
@@ -122,6 +120,7 @@ main {
     font-size: 2.5rem;
     margin-bottom: 20px;
     text-align: center;
+    color: var(--secondary-color);
 }
 
 .content-container h2 {
@@ -129,16 +128,19 @@ main {
     margin-top: 40px;
     margin-bottom: 15px;
     color: var(--secondary-color);
+    border-bottom: 2px solid rgba(138, 43, 226, 0.3);
+    padding-bottom: 5px;
 }
 
 .content-container h3 {
     font-size: 1.4rem;
     margin-top: 30px;
     margin-bottom: 10px;
+    color: var(--text-color);
 }
 
 .content-container p {
-    line-height: 1.7;
+    line-height: 1.8;
     margin-bottom: 20px;
 }
 
@@ -148,22 +150,19 @@ main {
     margin-bottom: 20px;
 }
 
-.content-container li {
+.icon-list li {
     position: relative;
-    padding-left: 25px;
+    padding-left: 35px;
     margin-bottom: 15px;
     line-height: 1.6;
 }
 
-.content-container li::before {
-    content: '';
+.icon-list li .fas {
     position: absolute;
     left: 0;
     top: 5px;
-    width: 12px;
-    height: 12px;
-    background-color: var(--secondary-color);
-    border-radius: 50%;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
 }
 
 .cta-text {
@@ -171,48 +170,49 @@ main {
     margin-top: 40px;
     margin-bottom: 20px;
     font-size: 1.1rem;
+    color: var(--secondary-color);
+    font-weight: 700;
 }
 
 .botaoFinal {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    gap: 20px;
 }
 
-.botaoFinal a {
-    margin-left: 20px;
-    margin-right: 20px;
+/* Estilos do rodapé */
+footer {
+    background-color: #0b082e;
+    color: #999;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* --- Responsividade --- */
+/* Responsividade */
 @media (max-width: 768px) {
-    main {
-        flex-direction: column;
-    }
-
     .header-container {
-        justify-content: space-between;
-    }
-   
-    .header-container a{
-        font-size: 18px;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
     }
 
-    .nav-menu a{
-        font-size: 14px;
+    .nav-menu {
+        gap: 15px;
     }
 
-    .header-container .cta-button{
-        font-size: 17px;
-        padding: 6px 13px;
+    .cta-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
     }
-
-    .esquerda {
-        min-height: 300px;
+    
+    main {
+        padding: 40px 15px;
     }
 
     .box {
-        padding: 30px;
+        padding: 30px 20px;
     }
 
     .content-container h1 {
@@ -226,10 +226,15 @@ main {
     .content-container h3 {
         font-size: 1.2rem;
     }
-}
 
-@media (max-width: 480px) {
-    .box {
-        padding: 20px;
+    .botaoFinal {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .botaoFinal a {
+        width: 100%;
+        max-width: 250px;
+        margin: 5px 0;
     }
 }
