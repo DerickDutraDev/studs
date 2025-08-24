@@ -17,15 +17,35 @@ if (formCadastro) {
 
       const data = await response.json();
 
-      if (response.ok) {
-        alert('Usuário cadastrado com sucesso!');
-        window.location.href = '/'; 
-      } else {
-        alert('Erro: ' + data.msg);
-      }
+    if (response.ok) {
+      Swal.fire({
+        title: 'Sucesso!',
+        text: 'Cadastro realizado com sucesso!',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      }).then((result) => {
+        // Redireciona somente após o usuário fechar o alerta
+        if (result.isConfirmed) {
+          window.location.href = '/';
+        }
+      });
+    } else {
+      Swal.fire({
+        title: 'Erro!',
+        text: data.msg,
+        icon: 'error',
+        confirmButtonText: 'Tentar Novamente'
+      });
+    }
+    
     } catch (error) {
       console.error('Erro de rede:', error);
-      alert('Não foi possível conectar ao servidor.');
+      Swal.fire({
+        title: 'Erro de conexão!',
+        text: 'Não foi possível conectar ao servidor. Por favor, tente novamente mais tarde.',
+        icon: 'warning',
+        confirmButtonText: 'OK'
+      });
     }
   });
 }

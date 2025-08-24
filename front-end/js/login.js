@@ -18,14 +18,31 @@ formLogin.addEventListener('submit', async (e) => {
     const data = await response.json();
 
     if (response.ok) {
-      alert('Login bem-sucedido! Redirecionando...');
-      // Redireciona para a rota /studs após o login
-      window.location.href = '/studs';
+      Swal.fire({
+        title: 'Sucesso!',
+        text: 'Login bem-sucedido!',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = '/studs';
+        }
+      });
     } else {
-      alert('Erro: ' + data.msg); // Exibe a mensagem de erro do back-end
+      Swal.fire({
+        title: 'Erro!',
+        text: data.msg,
+        icon: 'error',
+        confirmButtonText: 'Tentar Novamente'
+      });
     }
   } catch (error) {
     console.error('Erro de rede:', error);
-    alert('Não foi possível conectar ao servidor.');
+    Swal.fire({
+      title: 'Erro de conexão!',
+      text: 'Não foi possível conectar ao servidor. Por favor, tente novamente mais tarde.',
+      icon: 'warning',
+      confirmButtonText: 'OK'
+    });
   }
 });
