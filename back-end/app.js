@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.static(path.resolve(__dirname, '..', 'front-end')));
 
 // API
-app.use('/api', publicRoutes); 
+app.use('/api', publicRoutes);
 
 // Rotas para cada arquivo HTML
 app.get('/', (req, res) => {

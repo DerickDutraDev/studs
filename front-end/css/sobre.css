@@ -1,11 +1,16 @@
+/*
+ * Ajuste de CSS para a página 'Sobre'
+ * Utiliza as mesmas variáveis e estilos do CSS principal para consistência.
+ */
+
 /* Definição de cores e fontes usando variáveis */
 :root {
-    --primary-color: #4B0082; /* Roxo-escuro */
-    --secondary-color: #8A2BE2; /* Roxo-azulado */
-    --bg-color: #0d0a3d; /* Roxo-muito-escuro */
-    --text-color: #e0e0e0; /* Cinza-claro */
-    --form-bg-color: #1a1555; /* Roxo-azulado-escuro */
-    --input-bg-color: #2e268a; /* Roxo-azulado-claro */
+    --primary-color: #2a21b3;
+    --secondary-color: #7b68ee;
+    --bg-color: #0d0a3d;
+    --text-color: #ffffff;
+    --form-bg-color: #1a1555;
+    --input-bg-color: #2e268a;
     --font-family: 'Montserrat', sans-serif;
 }
 
@@ -28,7 +33,7 @@ body {
 .main-header {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     padding: 15px 0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -44,15 +49,15 @@ body {
 }
 
 .logo {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
     text-decoration: none;
     color: var(--text-color);
-    transition: transform 0.3s ease;
+    transition: color 0.3s ease-in-out;
 }
 
 .logo:hover {
-    transform: scale(1.05);
+    color: #c9c9ff;
 }
 
 .nav-menu {
@@ -64,30 +69,28 @@ body {
     font-size: 1rem;
     text-decoration: none;
     color: var(--text-color);
-    transition: color 0.3s ease, border-bottom 0.3s ease;
+    transition: color 0.3s ease-in-out;
 }
 
 .nav-link:hover {
     color: #c9c9ff;
-    border-bottom: 2px solid #c9c9ff;
-    padding-bottom: 2px;
 }
 
 .cta-button {
     background-color: var(--secondary-color);
     color: var(--text-color);
-    padding: 12px 24px;
+    padding: 10px 20px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button:hover {
     background-color: #9370db;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* --- Estilos da seção principal (Sobre) --- */
@@ -103,11 +106,9 @@ main {
     background-color: var(--form-bg-color);
     padding: 60px 40px;
     border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     width: 100%;
     max-width: 1000px;
-    background: linear-gradient(145deg, rgba(26, 21, 85, 0.9), rgba(13, 10, 61, 0.8));
-    backdrop-filter: blur(10px);
 }
 
 .content-container {
@@ -128,7 +129,7 @@ main {
     margin-top: 40px;
     margin-bottom: 15px;
     color: var(--secondary-color);
-    border-bottom: 2px solid rgba(138, 43, 226, 0.3);
+    border-bottom: 2px solid rgba(123, 104, 238, 0.3);
     padding-bottom: 5px;
 }
 
@@ -178,6 +179,47 @@ main {
     display: flex;
     justify-content: center;
     gap: 20px;
+}
+
+/* Estilos para os botões na seção principal */
+.botaoFinal .botao {
+    flex: 1;
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    padding: 15px;
+    border: none;
+    border-radius: 50px; /* Alterado: Mais arredondado */
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.botaoFinal .botao:first-child {
+    background-color: var(--secondary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.botaoFinal .botao:first-child:hover {
+    background-color: #9370db;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 10px 5px rgba(123, 104, 238, 0.5); /* Adicionado: Efeito de brilho */
+}
+
+.botaoFinal .botao:last-child {
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.botaoFinal .botao:last-child:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Estilos do rodapé */
@@ -231,8 +273,8 @@ footer {
         flex-direction: column;
         align-items: center;
     }
-    
-    .botaoFinal a {
+
+    .botaoFinal .botao {
         width: 100%;
         max-width: 250px;
         margin: 5px 0;
