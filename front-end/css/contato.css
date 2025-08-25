@@ -1,3 +1,8 @@
+/*
+ * Ajuste de CSS para a página 'Contato'
+ * Utiliza as mesmas variáveis e estilos do CSS principal para consistência.
+ */
+
 /* Definição de cores e fontes usando variáveis */
 :root {
     --primary-color: #2a21b3;
@@ -20,9 +25,11 @@ body {
     font-family: var(--font-family);
     background-color: var(--bg-color);
     color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Estilos do cabeçalho (mantidos) */
+/* Estilos do cabeçalho */
 .main-header {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     padding: 15px 0;
@@ -39,7 +46,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .logo {
@@ -47,6 +53,11 @@ body {
     font-weight: 700;
     text-decoration: none;
     color: var(--text-color);
+    transition: none;
+}
+
+.logo:hover {
+    transform: none;
 }
 
 .nav-menu {
@@ -63,6 +74,8 @@ body {
 
 .nav-link:hover {
     color: #c9c9ff;
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
 .cta-button {
@@ -85,137 +98,169 @@ body {
 /* --- Estilos da seção principal (Contato) --- */
 main {
     display: flex;
-    min-height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px - 100px);
     flex-wrap: wrap;
-    align-items: center;
-    /* Alinha as seções verticalmente ao centro */
+    align-items: stretch; /* Garante que os cards tenham a mesma altura */
     justify-content: center;
-}
-
-section {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    gap: 60px;
+    padding: 80px 20px;
 }
 
 .perfil-box {
     background-color: var(--form-bg-color);
-    padding: 40px;
-    border-radius: 10px;
+    padding: 50px 30px;
+    border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     width: 100%;
-    max-width: 450px;
+    max-width: 400px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--form-bg-color);
+    backdrop-filter: none;
 
+    /* NOVO: Transforma o box em um container flexível de coluna */
+    display: flex;
+    flex-direction: column;
+}
+
+.perfil-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 20px var(--secondary-color);
 }
 
 .perfil-img-container {
-    width: 154px;
+    width: 150px;
     height: 150px;
-    border-radius: 60%;
-    /* Torna o contêiner redondo */
-    /* overflow: hidden; /* Esconde o excesso da imagem */
+    border-radius: 50%;
     margin: 0 auto 20px;
-    border: 3px solid var(--secondary-color);
-    /* Borda decorativa */
-    box-shadow: 0 0 15px rgba(123, 104, 238, 0.5);
-    /* Sombra suave */
+    border: 4px solid var(--secondary-color);
+    box-shadow: 0 0 20px rgba(123, 104, 238, 0.7);
+    overflow: hidden;
     position: relative;
 }
 
 .perfil-img-container img {
-    width: 149px;
+    width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
-    border-radius: 60%;
-    position: absolute;
-    top: 0%;
-
+    object-position: center;
 }
 
 .perfil-box h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+    color: var(--secondary-color);
+    text-shadow: none;
+}
+
+.perfil-box p {
+    font-style: italic;
+    color: #b0b0b0;
+    margin-bottom: 25px;
 }
 
 .perfil-topicos {
     list-style: none;
     padding: 0;
-    margin-top: 20px;
-    text-align: center;
+    margin-top: 25px;
+    text-align: left;
+    
+    /* NOVO: Faz a lista crescer para ocupar o espaço extra */
+    flex-grow: 1;
 }
 
 .perfil-topicos li {
-    font-size: 1rem;
-    margin-bottom: 8px;
-    color: #ccc;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.perfil-topicos li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
 }
 
 .perfil-topicos li a {
-    color: var(--text-color);
+    color: var(--secondary-color);
     text-decoration: none;
-    transition: color 0.3s ease-in-out;
-    ;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .perfil-topicos li a:hover {
-    color: var(--secondary-color);
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-    ;
+    color: #c9c9ff;
+    text-decoration: underline;
 }
 
+/* Ícones para links */
+.icon {
+    font-size: 1.2rem;
+}
+
+/* Estilos do rodapé */
+footer {
+    background-color: #0b082e;
+    color: #999;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
 
 /* Responsividade */
-/* --- Responsividade Otimizada --- */
 @media (max-width: 768px) {
-
-    .logo {
-        font-size: 1rem;
-    }
-
-    .nav-menu {
-        gap: 10px;
-        height: 20px;
-    }
-
-    .nav-link {
-        font-size: 0.8rem;
-    }
-
-    .cta-button {
-        font-size: 0.8rem;
-        padding: 6px 12px;
-    }
-
-    main {
-        flex-direction: column;
-    }
-
-    section {
-        min-height: auto;
-    }
-
-    .perfil-box {
-        padding: 30px;
-    }
-}
-
-@media (max-width: 480px) {
-
     .header-container {
-        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
         text-align: center;
     }
 
     .nav-menu {
-        margin-top: 5px;
+        gap: 15px;
+    }
+
+    .cta-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    main {
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px 15px;
     }
 
     .perfil-box {
-        padding: 20px;
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        font-size: 0.8rem;
+    }
+
+    .perfil-box h1 {
+        font-size: 1.8rem;
+    }
+
+    .perfil-box p {
+        font-size: 0.9rem;
+    }
+
+    .perfil-topicos li {
+        font-size: 1rem;
     }
 }

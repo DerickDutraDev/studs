@@ -1,0 +1,86 @@
+/*
+ * Arquivo: alert.css
+ *
+ * Estilos para o SweetAlert2 que combinam com o design do seu site.
+ * Eles sobrescrevem os estilos padrão do SweetAlert2 para
+ * manter a coerência visual.
+ */
+
+/* ----------------------------------- */
+/* Estilos da Caixa de Alerta Principal */
+/* ----------------------------------- */
+.swal2-popup {
+    background-color: var(--form-bg-color) !important;
+    color: var(--text-color) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid var(--secondary-color) !important;
+    font-family: var(--font-family) !important;
+}
+
+/* ----------------------------------- */
+/* Estilos do Título e Conteúdo */
+/* ----------------------------------- */
+.swal2-title {
+    color: var(--text-color) !important;
+    font-weight: 700 !important;
+    font-size: 1.5rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.swal2-html-container {
+    color: var(--text-color) !important;
+    font-size: 1rem !important;
+}
+
+/* ----------------------------------- */
+/* Estilos do Ícone */
+/* ----------------------------------- */
+.swal2-icon.swal2-success {
+    border-color: var(--secondary-color) !important;
+}
+
+.swal2-icon.swal2-success [class^=swal2-success-line] {
+    background-color: var(--secondary-color) !important;
+}
+
+.swal2-icon.swal2-error {
+    border-color: #ff5f6d !important;
+}
+
+.swal2-icon.swal2-error [class^=swal2-x-mark-line] {
+    background-color: #ff5f6d !important;
+}
+
+.swal2-icon.swal2-warning {
+    border-color: #ffc371 !important;
+}
+
+.swal2-icon.swal2-warning::before,
+.swal2-icon.swal2-warning::after {
+    background-color: #ffc371 !important;
+}
+
+/* ----------------------------------- */
+/* Estilos do Botão de Confirmação */
+/* ----------------------------------- */
+.swal2-actions .swal2-confirm {
+    background-color: var(--secondary-color) !important;
+    color: var(--text-color) !important;
+    border: none !important;
+    font-weight: 700 !important;
+    padding: 10px 20px !important;
+    border-radius: 5px !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.swal2-actions .swal2-confirm:hover {
+    background-color: #9370db !important;
+}
+
+/* Remove o foco */
+.swal2-confirm:focus,
+.swal2-deny:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
