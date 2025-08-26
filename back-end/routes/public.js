@@ -1,8 +1,9 @@
-const express = require('express');
-const router = express.Router();
 const bcrypt = require('bcrypt');
+const express = require('express');
 const jwt = require('jsonwebtoken');
 const { User } = require('../models');
+
+const router = express.Router();
 
 // Rota de cadastro
 router.post('/register', async (req, res) => {
@@ -53,7 +54,5 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ error: 'Erro no servidor' });
   }
 });
-
-module.exports = router;
 
 module.exports = router;
