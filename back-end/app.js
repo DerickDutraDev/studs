@@ -1,3 +1,4 @@
+//SEPARAR ROTAS PRIVATE DEPOIS QUE TIVER JWT EM ROUTES/PRIVATE 
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
